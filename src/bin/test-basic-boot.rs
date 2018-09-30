@@ -5,10 +5,10 @@
 
 // add the library as dependency (same crate name as executable)
 #[macro_use]
-extern crate fros;
+extern crate kloudkernel;
 
 use core::panic::PanicInfo;
-use fros::exit_qemu;
+use kloudkernel::exit_qemu;
 
 /// This function is the entry point, since the linker looks for a function
 /// named `_start` by default.

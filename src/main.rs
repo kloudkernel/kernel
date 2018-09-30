@@ -4,7 +4,7 @@
 #![feature(panic_implementation)]
 
 #[macro_use]
-extern crate fros;
+extern crate kloudkernel;
 use core::panic::PanicInfo;
 
 #[panic_handler]

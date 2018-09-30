@@ -1,5 +1,5 @@
 [package]
-name = "fros"
+name = "kloudkernel"
 version = "0.1.0"
 authors = ["fred <fredlahde@gmail.com>"]
 
@@ -20,7 +20,7 @@ panic = "abort"
 panic = "abort"
 
 [package.metadata.bootimage]
-default-target = "x86_64-fros.json"
+default-target = "x86_64-kloudkernel.json"
 
 [dependencies.lazy_static]
 version = "1.0"

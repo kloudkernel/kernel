@@ -25,7 +25,7 @@ dependencies = [
 ]
 
 [[package]]
-name = "fros"
+name = "kloudkernel"
 version = "0.1.0"
 dependencies = [
  "array-init 0.0.3 (registry+https://github.com/rust-lang/crates.io-index)",
