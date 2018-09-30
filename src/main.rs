@@ -3,24 +3,8 @@
 #![cfg_attr(test, allow(dead_code, unused_macros, unused_imports))]
 #![feature(panic_implementation)]
 
-#[cfg(test)]
-extern crate std;
-
-#[cfg(test)]
-extern crate array_init;
-
 #[macro_use]
-extern crate lazy_static;
-extern crate bootloader_precompiled;
-extern crate spin;
-extern crate uart_16550;
-extern crate volatile;
-extern crate x86_64;
-
-#[macro_use]
-mod vga_buffer;
-#[macro_use]
-mod serial;
+extern crate fros;
 use core::panic::PanicInfo;
 
 #[panic_handler]
@@ -51,10 +35,3 @@ pub extern "C" fn _start() -> ! {
     loop {}
 }
 
-pub fn exit_qemu() {
-    use x86_64::instructions::port::Port;
-    let mut port = Port::<u32>::new(0xf4);
-    unsafe {
-        port.write(0);
-    }
-}
