@@ -6,6 +6,7 @@
 #[macro_use]
 extern crate kloudkernel;
 use core::panic::PanicInfo;
+use kloudkernel::{interrupt, gdt};
 
 #[panic_handler]
 #[no_mangle]
@@ -22,16 +23,12 @@ pub fn panic(info: &PanicInfo) -> ! {
 pub extern "C" fn _start() -> ! {
     println!("Hello world!");
     serial_println!("Hello world!");
+    interrupt::init_idt();
+    x86_64::instructions::int3();
+    gdt::init();
     loop {}
 }
 
-#[no_mangle]
-#[cfg(feature = "integration-test")]
-#[cfg(not(test))]
-pub extern "C" fn _start() -> ! {
-    println!("Hello world!");
-    serial_println!("Hello world!");
-    exit_qemu();
-    loop {}
+fn foo() {
+    foo();
 }
-

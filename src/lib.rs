@@ -1,4 +1,5 @@
 #![no_std]
+#![feature(abi_x86_interrupt)]
 
 #[cfg(test)]
 extern crate std;
@@ -14,10 +15,13 @@ extern crate uart_16550;
 extern crate volatile;
 extern crate x86_64;
 
+
 #[macro_use]
 pub mod vga_buffer;
 #[macro_use]
 pub mod serial;
+pub mod interrupt;
+pub mod gdt;
 
 pub fn exit_qemu() {
     use x86_64::instructions::port::Port;
