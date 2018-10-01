@@ -1,3 +1,6 @@
 [submodule "kloc"]
 	path = kloc
 	url = git@github.com:kloudkernel/kloc.git
+[submodule "ksys"]
+	path = ksys
+	url = git@github.com:kloudkernel/ksys.git
