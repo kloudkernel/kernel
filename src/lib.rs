@@ -15,6 +15,8 @@ extern crate uart_16550;
 extern crate volatile;
 extern crate x86_64;
 
+extern crate ksys;
+
 
 #[macro_use]
 pub mod vga_buffer;
