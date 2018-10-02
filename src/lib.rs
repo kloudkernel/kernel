@@ -16,6 +16,7 @@ extern crate volatile;
 extern crate x86_64;
 
 extern crate ksys;
+extern crate kloc;
 
 
 #[macro_use]

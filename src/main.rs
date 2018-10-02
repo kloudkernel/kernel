@@ -5,8 +5,9 @@
 
 #[macro_use]
 extern crate kloudkernel;
+extern crate kloc;
 use core::panic::PanicInfo;
-use kloudkernel::{interrupt, gdt};
+use kloudkernel::{gdt, interrupt};
 
 #[panic_handler]
 #[no_mangle]
@@ -24,11 +25,9 @@ pub extern "C" fn _start() -> ! {
     println!("Hello world!");
     serial_println!("Hello world!");
     interrupt::init_idt();
-    x86_64::instructions::int3();
     gdt::init();
+    unsafe {
+        kloc::init(0x101000, 4096);
+    }
     loop {}
-}
-
-fn foo() {
-    foo();
 }
